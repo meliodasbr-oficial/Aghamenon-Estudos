@@ -1,0 +1,134 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonte Padrão */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Cabeçalho */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 22px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(55, 55, 55);
+    z-index: 1000; /* Garante que o cabeçalho esteja sobreposto a outros elementos */
+}
+
+header .logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(background.png);
+    background-position: center fixed;
+    background-size: cover;
+    padding: 0 8%;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    color: #fff;
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+.content p {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.content h1 {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.content h1 span {
+    color: #0c4ff9;
+    font-size: 64px;
+}
+
+.launch-time {
+    display: flex;
+    justify-content: center; /* Centraliza os elementos */
+    margin-top: 20px; /* Espaçamento superior */
+}
+
+.launch-time div {
+    flex-basis: 100px;
+}
+
+.launch-time div p {
+    font-size: 36px;
+    margin-bottom: -10px;
+}
+
+.launch-time div span {
+    display: block; /* Mostra o span como bloco para ajustar o layout */
+}
+
+.rocket {
+    width: 300px; /* Tamanho reduzido para telas menores */
+    position: absolute;
+    right: 5%; /* Ajuste para posicionamento em telas menores */
+    bottom: -40px; /* Ajuste para posicionamento em telas menores */
+    animation: rocket 4s linear infinite;
+    overflow-x: hidden;
+}
+
+@keyframes rocket {
+    0% {
+        bottom: 0px; /* Posição inicial ajustada */
+        opacity: 0;
+    }
+    100% {
+        bottom: 100%; /* Posição final ajustada */
+        opacity: 1;
+    }
+}
+
+/* Media Query para telas menores */
+@media screen and (max-width: 768px) {
+    .content {
+        left: 5%; /* Ajuste de posicionamento para telas menores */
+    }
+
+    .content p {
+        font-size: 24px; /* Tamanho de fonte menor para telas menores */
+    }
+
+    .content h1 {
+        font-size: 32px; /* Tamanho de fonte menor para telas menores */
+    }
+
+    .content h1 span {
+        font-size: 48px; /* Tamanho de fonte menor para telas menores */
+    }
+
+    .launch-time div p {
+        font-size: 28px; /* Tamanho de fonte menor para telas menores */
+    }
+
+    .rocket {
+        width: 150px; /* Tamanho reduzido para telas menores */
+        right: 2%; /* Ajuste de posicionamento para telas menores */
+        bottom: -30px; /* Ajuste de posicionamento para telas menores */
+    }
+}
